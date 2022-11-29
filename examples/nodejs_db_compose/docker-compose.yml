@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  appjs_app:
+    build:
+      context: ./app
+      dockerfile: Dockerfile
+    volumes:
+      - ./app:/app
+    ports:
+      - 8080:8080
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres
+    env_file:
+      - .env
