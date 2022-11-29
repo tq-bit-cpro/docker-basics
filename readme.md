@@ -37,19 +37,19 @@
   - [Docker](#docker)
   - [Docker-compose](#docker-compose-1)
 
-# Installing Docker & Docker Compose
+## Installing Docker & Docker Compose
 
-## Installing Docker Desktop on Windows (Link)
+### Installing Docker Desktop on Windows (Link)
 
 https://docs.docker.com/desktop/install/windows-install/
 
-## Installing Docker Engine on Windows + WSL (Link)
+### Installing Docker Engine on Windows + WSL (Link)
 
 > Docker Engine is not available on Windows per-se - [you'll have to install and enable WSL (Windows Subsystem for Linux) ](https://learn.microsoft.com/en-us/windows/wsl/install) before moving ahead
 
 https://docs.docker.com/engine/install/ubuntu/
 
-## Docker Engine vs. Docker Desktop
+### Docker Engine vs. Docker Desktop
 
 Docker Desktop gives useful insights into containers, images, networks and volumes on your local machine. It comes with a catch: Since 2021, Docker Desktop is published under a proprietary license.
 
@@ -59,7 +59,7 @@ If you're just starting out to learn Docker, you should definitely install eithe
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-# Brief: What is Docker?
+## Brief: What is Docker?
 
 - Docker is a tool to create containers of software and manage them.
 - When installed, it runs a Docker daemon that's responsible to manage running Docker components, such as networks, containers and volumes.
@@ -67,7 +67,7 @@ If you're just starting out to learn Docker, you should definitely install eithe
 
 There are some concepts about docker you should keep in mind
 
-## Dockerfiles
+### Dockerfiles
 
 - Dockerfiles include steps to build an application image
 - These steps are standardized and run inside a sandboxed environment, independently of the machine's OS
@@ -75,7 +75,7 @@ There are some concepts about docker you should keep in mind
 
 Code examples:
 
-### Build a basic node application
+#### Build a basic node application
 
 ```dockerfile
 FROM node:latest
@@ -87,7 +87,7 @@ RUN npm install
 CMD [ "npm", "run", "dev" ]
 ```
 
-### Build a frontend in two steps
+#### Build a frontend in two steps
 
 Example from https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/client.prod.dockerfile
 
@@ -108,7 +108,7 @@ EXPOSE 80
 CMD [ "nginx", "-g", "daemon off;" ]
 ```
 
-### Build a backend in two steps
+#### Build a backend in two steps
 
 Example from https://github.com/tq-bit/chattergram-redis/blob/master/backend/be.prod.dockerfile
 
@@ -129,7 +129,7 @@ EXPOSE 9090
 CMD [ "node", "backend/server.js" ]
 ```
 
-## Docker Images
+### Docker Images
 
 - Images are blueprints from which containers can be launched.
 - They include steps to replicate a running software product (= container) on any platform where Docker is installed
@@ -149,7 +149,7 @@ $ sudo docker image ls
 $ sudo docker image rm hello-world
 ```
 
-## Docker Containers
+### Docker Containers
 
 - Containers are standardized, isolated software units that yield the same behavior over different machines when managed by the Docker daemon.
 - Containers by default are stateless - all persistent memory is freed when a container is destroyed.
@@ -170,7 +170,7 @@ $ sudo docker ls --all
 $ sudo docker stop $(docker container ls -a -q) && docker container rm $(docker container ls -a -q)
 ```
 
-## Docker Volumes & Bind Mounts
+### Docker Volumes & Bind Mounts
 
 - Docker volumes are partitions of memory managed by Docker.
   - They are used to persist data from containers that does not have to be immediately accessible, e.g. database - or cache data
@@ -191,7 +191,7 @@ $ sudo docker run -v /home/user/ssl:/etc/ssh nginx:latest
 $ sudo docker volume inspect my-ssl-volume
 ```
 
-## Docker Networks
+### Docker Networks
 
 - Networks are used to connect containers with one another
   - Each container receives an IP address within the created network
@@ -215,19 +215,19 @@ $ sudo docker container inspect hello-world | grep -i IPAddress
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
-# Docker Compose
+## Docker Compose
 
-## Brief: What is docker compose?
+### Brief: What is docker compose?
 
 - A plugin (formerly a binary) to orchestrate container, volume, network and other docker component lifecycles
 - It helps managing more complex container setups and can be used to manage and scale clusters of containers
 
-## Installing docker-compose
+### Installing docker-compose
 
 - As of 2022, docker compose is part of the default docker engine installation process under the package `docker-compose-plugin`
 - Read more about the topic here: https://docs.docker.com/compose/reference/
 
-## The docker-compose.yml file
+### The docker-compose.yml file
 
 - Instead of asking an admin to write docker commands, docker-compose uses a dedicated `.yml` (or `.yaml`) file
 - It includes all services (= application images) to be launched as containers, as well as other docker components, such as networks and volumes
@@ -237,18 +237,18 @@ $ sudo docker container inspect hello-world | grep -i IPAddress
 
 A minimal example docker-compose file can be found under `examples/nodejs_db_compose`
 
-## An example file to compose a whole technology stack
+### An example file to compose a whole technology stack
 
 Docker compose files become complex quickly as the stack grows. Appwrite provides a dedicated docker-compose file for development. It can be found on Github
 
 https://github.com/appwrite/appwrite/blob/master/docker-compose.yml
 
-# Cheatsheets
+## Cheatsheets
 
-## Docker
+### Docker
 
-![](/docker/cheatsheets/docker.png)
+![](https://github.com/tq-bit-cpro/docker/blob/master/cheatsheets/docker.png?raw=true)
 
-## Docker-compose
+### Docker-compose
 
-![](/docker/cheatsheets/docker-compose.png)
+![](https://github.com/tq-bit-cpro/docker/blob/master/cheatsheets/docker-compose.png?raw=true)
