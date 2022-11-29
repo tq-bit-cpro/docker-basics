@@ -112,6 +112,8 @@ RUN npm install
 CMD [ "npm", "run", "dev" ]
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 #### Build a frontend in two steps
 
 Example from https://github.com/cpro-iot/cpro-ui5-ts-template/blob/master/client.prod.dockerfile
@@ -132,6 +134,8 @@ COPY nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 CMD [ "nginx", "-g", "daemon off;" ]
 ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 #### Build a backend in two steps
 
@@ -154,6 +158,8 @@ EXPOSE 9090
 CMD [ "node", "backend/server.js" ]
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Docker Images
 
 - Images are blueprints from which containers can be launched.
@@ -173,6 +179,8 @@ $ sudo docker image ls
 # Remove an image from local machine
 $ sudo docker image rm hello-world
 ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Docker Containers
 
@@ -195,6 +203,8 @@ $ sudo docker ls --all
 $ sudo docker stop $(docker container ls -a -q) && docker container rm $(docker container ls -a -q)
 ```
 
+<p align="right">(<a href="#top">back to top</a>)</p>
+
 ### Docker Volumes & Bind Mounts
 
 - Docker volumes are partitions of memory managed by Docker.
@@ -215,6 +225,8 @@ $ sudo docker run -v /home/user/ssl:/etc/ssh nginx:latest
 # Get detailled information about a volume
 $ sudo docker volume inspect my-ssl-volume
 ```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ### Docker Networks
 
@@ -267,6 +279,8 @@ A minimal example docker-compose file can be found under `examples/nodejs_db_com
 Docker compose files become complex quickly as the stack grows. Appwrite provides a dedicated docker-compose file for development. It can be found on Github
 
 https://github.com/appwrite/appwrite/blob/master/docker-compose.yml
+
+<p align="right">(<a href="#top">back to top</a>)</p>
 
 ## Cheatsheets
 
