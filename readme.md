@@ -20,6 +20,8 @@
   - [Installing Docker Engine on Windows + WSL (Link)](#installing-docker-engine-on-windows--wsl-link)
   - [Docker Engine vs. Docker Desktop](#docker-engine-vs-docker-desktop)
 - [Brief: What is Docker?](#brief-what-is-docker)
+  - [Virtual machines vs. Docker](#virtual-machines-vs-docker)
+- [Docker components](#docker-components)
   - [Dockerfiles](#dockerfiles)
     - [Build a basic node application](#build-a-basic-node-application)
     - [Build a frontend in two steps](#build-a-frontend-in-two-steps)
@@ -65,8 +67,31 @@ If you're just starting out to learn Docker, you should definitely install eithe
 - When installed, it runs a Docker daemon that's responsible to manage running Docker components, such as networks, containers and volumes.
 - Compared to running apps in virtual machines, Docker eliminates the necessity of having a Guest OS overhead.
 
-There are some concepts about docker you should keep in mind
+### Virtual machines vs. Docker
 
+VMs are useful to run sandboxed applications. They run in sandboxed environments on a guest operating system, e.g. an OpenSuse distribution on Windows 10.
+
+![](https://www.docker.com/wp-content/uploads/2021/11/container-vm-whatcontainer_2.png.webp)
+
+Using VMs works fine for monolithic software. Its components are tightly coupled and there is no need for intensive inter-VM-communication.
+
+But what if we used a more decoupled approach? Imagine a more complex environment composed of microservices. Maybe a Tomcat Server using Kafka to communicate realtime updates to a MySQL, Postgres and MongoDB database, which themselves have their own API services. And distributed development teams, of course, who write code on Mac, Ubuntu and Windows.
+
+So instead of shipping software into VMs, developers will ship runtimes which include the software. This is what's commonly referred to as **Containers**, or **Containerized Software**
+
+> Using docker streamlines development and eliminates the necessity to handle overhead created by VMs in complex environments
+
+When rolling containers out, they are run by the Docker daemon instead of the Guest OS. At the same time, Docker provides ways to persist data and connect containers over networks, both of which has to be done manually on VMs.
+
+![](https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-appliction-blue-border_2.png.webp)
+
+Source for images: https://www.docker.com/resources/what-container/
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+## Docker components
+
+There are some concepts about docker you should keep in mind
 ### Dockerfiles
 
 - Dockerfiles include steps to build an application image
