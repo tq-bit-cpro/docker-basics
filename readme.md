@@ -81,7 +81,7 @@ So instead of shipping software into VMs, developers will ship runtimes which in
 
 > Using docker streamlines development and eliminates the necessity to handle overhead created by VMs in complex environments
 
-When rolling containers out, they are run by the Docker daemon instead of the Guest OS. At the same time, Docker provides ways to persist data and connect containers over networks, both of which has to be done manually on VMs.
+When rolling containers out, they are run by the Docker daemon instead of the Guest OS. At the same time, Docker provides ways to persist data and connect containers over networks, both of which has to be done manually on VMs. Over the last years, docker has become the de-facto standard to develop, test and roll out software.
 
 ![](https://www.docker.com/wp-content/uploads/2021/11/docker-containerized-appliction-blue-border_2.png.webp)
 
