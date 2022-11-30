@@ -73,9 +73,17 @@ Virtual machines run sandboxed environments (= guest operating systems) on a pro
 
 ![](https://www.docker.com/wp-content/uploads/2021/11/container-vm-whatcontainer_2.png.webp)
 
-Using VMs works fine for monolithic software. Its components are tightly coupled and there is no need for intensive inter-VM-communication.
+VMs are a good match for monolithic software with a tightly coupled component structure. There is no need for intensive inter-VM-communication.
 
-But what if we used a more decoupled approach? Imagine a more complex environment composed of microservices. Maybe a Tomcat Server using Kafka to communicate realtime updates to a MySQL, Postgres and MongoDB database, which themselves have their own API services. And distributed development teams, of course, who write code on Mac, Ubuntu and Windows.
+But what if we used a decoupled approach? Imagine a more complex environment composed of microservices. Take
+- a Tomcat Server 
+- using Kafka 
+- to communicate realtime updates to 
+  - a MySQL, 
+  - Postgres 
+  - and MongoDB database 
+- which themselves have their own API services. 
+- and distributed development teams, of course, who write code on Mac, Ubuntu and Windows.
 
 So instead of shipping software into VMs, developers will ship runtimes which include the software. This is what's commonly referred to as **Containers**, or **Containerized Software**
 
