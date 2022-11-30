@@ -69,7 +69,7 @@ If you're just starting out to learn Docker, you should definitely install eithe
 
 ### Virtual machines vs. Docker
 
-VMs are useful to run sandboxed applications. They run in sandboxed environments on a guest operating system, e.g. an OpenSuse distribution on Windows 10.
+Virtual machines run sandboxed environments (= guest operating systems) on a provided infrastructure, e.g. an OpenSuse distribution on Windows 10.
 
 ![](https://www.docker.com/wp-content/uploads/2021/11/container-vm-whatcontainer_2.png.webp)
 
