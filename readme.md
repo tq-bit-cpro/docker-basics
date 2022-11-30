@@ -4,7 +4,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/cpro-iot">
-    <img src="https://cpro-karriere.com/image/LOGO/doefwYl1s92eauMm83CoxrkXnOM76tazOd1RDgVzXeyn6h" alt="Logo" width="180" height="80">
+    <img src="https://www.cpro-iot.de/wp-content/uploads/Logo-mit-Claim_weiss-1920x204.png" alt="Logo" width="480" height="60">
   </a>
 
 <h1 align="center">Getting started with Docker & Docker Compose</h1>
